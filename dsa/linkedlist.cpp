@@ -20,7 +20,8 @@ class node
   }
   
   
-    friend void printer(node* &head);
+  friend void printer(node* &head);
+  friend void insertAtHead(node* &head, int data);
   
   };
   
@@ -37,6 +38,14 @@ class node
   
   }
 
+  void insertAtHead(node* &head, int data)
+  {
+    node* newNode  = new node(data);
+    newNode -> next = head;
+    head = newNode;
+  }  
+
+  
 
 
 int main() {
@@ -54,7 +63,9 @@ int main() {
 
   cout << "Printing LL: " << endl;
   printer(first);
-
+  cout << endl;
+  insertAtHead(first, 45);
+  printer(first);
 
   return 0;
 }
