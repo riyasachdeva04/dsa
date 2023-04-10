@@ -20,9 +20,6 @@ class node
   }
   
   
-  friend void printer(node* &head);
-  friend void insertAtHead(node* &head, int data);
-  
   };
   
   void printer(node* &head)
@@ -40,12 +37,63 @@ class node
 
   void insertAtHead(node* &head, int data)
   {
+    if(head == NULL)
+    {
+      node* newNode = new node(data);
+      head = newNode->next;
+
+    }
+    else
+    {
     node* newNode  = new node(data);
     newNode -> next = head;
     head = newNode;
+    }
   }  
 
-  
+  void insertAtTail(node* &tail, int data)
+  {
+    node* newNode = new node(data);
+    tail -> next = newNode;
+    tail = newNode;
+  }  
+
+  void insertAtPosition(node* &previous, node* &next, int data)
+  {
+    
+    {
+    node* newNode = new node();
+    newNode -> data = data;
+    previous -> next = newNode;
+    newNode -> next = next;
+    }
+  }
+
+  void insertingAtPos(node* &head, node* &tail, int pos, int data)
+  {
+    node* current = new node(data);
+    int i=1;
+    pos = pos-1;
+    node* prev = head;
+    node* nextnode;
+    if(head == NULL)
+    {
+      head -> next = current;
+      tail->next = current;
+    }
+    else
+    {
+      while( i< pos)
+      {
+        prev = prev->next;
+        i++;
+      }
+      nextnode = prev ->next;
+      prev->next = current;
+      current->next = nextnode;
+      
+    }
+  }
 
 
 int main() {
@@ -66,6 +114,13 @@ int main() {
   cout << endl;
   insertAtHead(first, 45);
   printer(first);
-
-  return 0;
+  cout << endl;
+  insertAtTail(fifth, 70);
+  printer(first);
+  cout << endl;
+  insertAtPosition(first, second, 50);
+  printer(first);
+  cout << endl;
+  insertingAtPos(first, fifth, 3, 29);
+  printer(first);
 }
