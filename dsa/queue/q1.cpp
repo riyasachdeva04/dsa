@@ -57,6 +57,12 @@ class Queue
       return false;
   }
 
+  int getSize()
+  {
+    return rear - front;
+  }
+
+
   int getFront()
   {
     return arr[front];
