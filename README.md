@@ -3,7 +3,7 @@
 ### Topics I've covered till date:
 1. Arrays/Vectors
 2. Strings
-3. Binary Search
+3. [Binary Search](https://github.com/riyasachdeva04/dsa/tree/main/dsa/binary-search%20%26%20sorting/BS1%20Cods)
 4. [Recursion & Backtracking](https://github.com/riyasachdeva04/dsa/tree/main/dsa/reccursion)
 5. DnC
 6. OOPs
