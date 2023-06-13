@@ -1,6 +1,6 @@
-### Data Structures and Algorithms
+# Data Structures and Algorithms
 
-# Topics I've covered till date:
+### Topics I've covered till date:
 1. Arrays/Vectors
 2. Strings
 3. Binary Search
