@@ -10,4 +10,4 @@
 7. [Linked List](https://github.com/riyasachdeva04/dsa/tree/main/dsa/linked%20list)
 8. [Stack](https://github.com/riyasachdeva04/dsa/tree/main/dsa/stack)
 9. [Queue](https://github.com/riyasachdeva04/dsa/tree/main/dsa/queue)
-10. Trees
+10. [Trees](https://github.com/riyasachdeva04/dsa/tree/main/dsa/tree)
