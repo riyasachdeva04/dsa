@@ -90,10 +90,6 @@ void inorderPredecessor(Node* root, int target, Node* temp = NULL)
       Node* left = root->left;
       ans = getMax(left);
     }
-    else
-    {
-      ans = temp->data;
-    }
     cout << "Predecessor: " << ans << endl;
     return;
   }
