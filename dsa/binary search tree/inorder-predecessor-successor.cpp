@@ -1,3 +1,5 @@
+// This program works  when target isn't leaf node else store inorder and traverse the array
+
 #include <iostream>
 using namespace std;
 #include<queue>
@@ -75,7 +77,7 @@ int getMax(Node*root)
   return -1;
 }
 
-void inorderPredecessor(Node* root, int target, Node* temp = NULL)
+void inorderPredecessor(Node* root, int target)
 {
   int ans;
 
@@ -94,10 +96,33 @@ void inorderPredecessor(Node* root, int target, Node* temp = NULL)
     return;
   }
 
-  temp = root;
 
-  inorderPredecessor(root->left, target, temp);
-  inorderPredecessor(root->right, target, temp);
+  inorderPredecessor(root->left, target);
+  inorderPredecessor(root->right, target);
+}
+
+void inorderSuccessor(Node* root, int target)
+{
+  int ans;
+
+  if (root == NULL)
+    return;
+
+  if (root->data == target)
+  {
+    // predecessor find karo
+    if (root->right) // left ka max
+    {
+      Node* right = root->right;
+      ans = getMin(right);
+    }
+    cout << "Successor: " << ans << endl;
+    return;
+  }
+
+
+  inorderSuccessor(root->left, target);
+  inorderSuccessor(root->right, target);
 }
 
 
@@ -107,6 +132,10 @@ int main() {
   takeInput(root);
 
   inorderPredecessor(root, 5);
+  inorderPredecessor(root, 30);
+  inorderSuccessor(root, 5);
+  inorderSuccessor(root, 30);
+
   
 
 
