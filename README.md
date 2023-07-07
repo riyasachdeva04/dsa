@@ -11,3 +11,4 @@
 8. [Stack](https://github.com/riyasachdeva04/dsa/tree/main/dsa/stack)
 9. [Queue](https://github.com/riyasachdeva04/dsa/tree/main/dsa/queue)
 10. [Tree](https://github.com/riyasachdeva04/dsa/tree/main/dsa/tree)
+11. [Binary Search Tree](https://github.com/riyasachdeva04/dsa/tree/main/dsa/binary%20search%20tree)
