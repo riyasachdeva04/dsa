@@ -11,32 +11,29 @@
  */
 class Solution {
 public:
-    bool isValidBST(TreeNode* root) {
-        TreeNode* leftPart;
-        TreeNode* rightPart;
-
+    bool solve(TreeNode* root, long long int lb, long long int ub)
+    {
         if(root == NULL)
             return true;
-
-        if((!root->left) && (!root->right))
+        
+        if((root->val > lb && root->val < ub) && (solve(root->left, lb, root->val)) && (solve(root->right, root->val, ub)))
+        {
             return true;
-
-        if(root->left)
-        {
-            leftPart = root->left;
-            if(leftPart->val >= root->val)
-                return false;
         }
-        
-        if(root->right)
+        else
         {
-            rightPart = root->right;
-            if(rightPart->val <= root->val)
-                return false;
+            return false;
         }
-        
-    return (isValidBST(root->left) && isValidBST(root->right));
+    }
 
-    }  
+    bool isValidBST(TreeNode* root) {
+
+        long long int lowerbound = -pow(2, 32);
+        long long int upperbound = pow(2, 32);
+        bool ans = solve(root, lowerbound, upperbound);
+
+        return ans;
+
+}
 
 };
