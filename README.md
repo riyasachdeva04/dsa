@@ -13,3 +13,4 @@
 10. [Queue](https://github.com/riyasachdeva04/dsa/tree/main/dsa/queue)
 11. [Tree](https://github.com/riyasachdeva04/dsa/tree/main/dsa/tree)
 12. [Binary Search Tree](https://github.com/riyasachdeva04/dsa/tree/main/dsa/binary%20search%20tree)
+13. [Maps & Tries](https://github.com/riyasachdeva04/dsa/tree/main/dsa/Maps%20%26%20Tries)
