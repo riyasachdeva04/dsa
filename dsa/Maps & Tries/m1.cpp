@@ -31,5 +31,12 @@ int main() {
   m["Car5"] = 3;
   cout << m["Car5"] << endl;
   cout << m.size() << endl;
+
+  cout << "Print all entries: " << endl;
+
+  for(auto i: m)
+    {
+      cout << i.first << " " << i.second << endl;
+    }
   
 }
