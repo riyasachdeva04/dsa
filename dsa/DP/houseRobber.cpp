@@ -54,14 +54,36 @@ public:
         return dp[n];
     }
 
+    int spaceOptimisedSol(vector<int>& nums, int n)
+    {
+        if(n == 0)
+            return nums[0];
+
+        int prev2 = 0;
+        int prev1 = nums[0];
+        int curr;
+
+        for(int i=1; i<=n; i++)
+        {   
+            int include = prev2 + nums[i];
+            int exclude = prev1;
+
+            curr = max(include, exclude);
+            prev2 = prev1;
+            prev1 = curr;
+        }
+        return curr;
+    }
 
     int rob(vector<int>& nums) 
     {
         int n = nums.size() - 1;
         // return solveRec(nums, n);
 
-        vector<int> dp(n+1, -1);
-        return solveMem(nums, n, dp);
+        // vector<int> dp(n+1, -1);
+        // return solveMem(nums, n, dp);
+
+        return spaceOptimisedSol(nums, n);        
     }
       
 };
