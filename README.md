@@ -2,7 +2,7 @@
 
 ### Topics I've covered till date:
 1. [Arrays/Vectors](https://github.com/riyasachdeva04/dsa/tree/main/dsa/arrays)
-2. Sorting
+2. [Sorting](https://github.com/riyasachdeva04/dsa/tree/main/dsa/sorting)
 3. Strings
 4. [Binary Search](https://github.com/riyasachdeva04/dsa/tree/main/dsa/binary-search%20%26%20sorting/BS1%20Cods)
 5. [Recursion & Backtracking](https://github.com/riyasachdeva04/dsa/tree/main/dsa/reccursion)
