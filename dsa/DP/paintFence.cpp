@@ -29,6 +29,20 @@ int solveMem(int n, int k, vector<int>& dp)
     return dp[n];
 }
 
+int solveusingTab(int n, int k)
+{
+  vector<int> dp(n+1, 0);
+  dp[1] = k;
+  dp[2] = k + k*(k-1);
+
+  for(int i=3; i<=n; i++)
+    {
+      dp[i] = (dp[i-1] + dp[i-2]) * (k-1);
+    }
+
+  return dp[n];
+}
+
 int main() {
 
   int n = 4;
@@ -36,8 +50,10 @@ int main() {
 
   // cout << paintFence(n, k) << endl;
 
-  vector<int> dp(n+1, -1);
-  cout << solveMem(n, k, dp) << endl;
+  // vector<int> dp(n+1, -1);
+  // cout << solveMem(n, k, dp) << endl;
+
+  cout << solveusingTab(n, k) << endl;
   
 
 }
