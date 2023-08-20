@@ -43,6 +43,23 @@ int solveusingTab(int n, int k)
   return dp[n];
 }
 
+int spaceOptim(int n, int k)
+{
+  int prev2 = k;
+  int prev1 = k + k*(k-1);
+  int curr;
+
+  for(int i=3; i<=n; i++)
+    {
+      curr = (prev1 + prev2) * (k-1);
+
+      prev2 = prev1;
+      prev1 = curr;
+    }
+
+  return curr; 
+}
+
 int main() {
 
   int n = 4;
@@ -53,7 +70,7 @@ int main() {
   // vector<int> dp(n+1, -1);
   // cout << solveMem(n, k, dp) << endl;
 
-  cout << solveusingTab(n, k) << endl;
+  cout << spaceOptim(n, k) << endl;
   
 
 }
