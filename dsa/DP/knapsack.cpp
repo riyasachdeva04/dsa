@@ -112,6 +112,36 @@ int solveUsingSO(vector<int>& weights, vector<int>& value, int n, int capacity)
   
 }
 
+int solveUsingSO2(vector<int>& weights, vector<int>& value, int n, int capacity)
+{
+  vector<int> curr(capacity+1, 0);
+
+  for(int w=weights[0]; w<=capacity; w++)
+    {
+      if(weights[0] <= capacity)
+        curr[w] = value[0];
+    }
+
+  for(int index=1; index<=n; index++)
+    {
+      for(int wt = capacity; wt>=0; wt--)
+        {
+          int include = 0;
+          if(weights[index] <= wt)
+          {
+            include = value[index] + curr[wt-weights[index]];
+            
+          }
+          int exclude = curr[wt];
+
+          curr[wt] = max(include, exclude);
+        }
+    }
+  return curr[capacity];
+
+  
+}
+
 
 int main() {
   vector<int> weights = {4, 5, 1};
@@ -121,5 +151,5 @@ int main() {
 
   // vector<vector<int>> dp(n, vector<int>(cap+1, -1));
   
-  cout << solveUsingSO(weights, value, n-1, cap);
+  cout << solveUsingSO2(weights, value, n-1, cap);
 }
