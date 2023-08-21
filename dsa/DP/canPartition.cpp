@@ -1,21 +1,37 @@
-#include <iostream>
-#include<vector>
-using namespace std;
+class Solution {
+public:
 
-    bool solveUsingRec(vector<int>& nums, int n, int sum)
+    // bool solveUsingRec(vector<int>& nums, int n, int sum)
+    // {
+    //     if(sum == 0)
+    //         return true;
+
+    //     if(n == 0)
+    //         return false;
+
+    //     bool include = solveUsingRec(nums, n-1, sum-nums[n]);
+    //     bool exclude = solveUsingRec(nums, n-1, sum);
+
+    //     bool ans = include || exclude;
+    //     return ans;
+
+    // }
+
+    bool solveMem(vector<int>& nums, int n, int sum, vector<vector<int>>& dp)
     {
         if(sum == 0)
             return true;
-
-        if(n == 0)
+        if(n <= 0 || sum<0)
             return false;
 
-        bool include = solveUsingRec(nums, n-1, sum-nums[n]);
-        bool exclude = solveUsingRec(nums, n-1, sum);
+        if(dp[n][sum] != -1)
+            return dp[n][sum];
 
-        bool ans = include || exclude;
-        return ans;
+        bool include = solveMem(nums, n-1, sum-nums[n], dp);
+        bool exclude = solveMem(nums, n-1, sum, dp);
 
+        dp[n][sum] = include || exclude;
+        return dp[n][sum];        
     }
 
     bool canPartition(vector<int>& nums) {
@@ -33,11 +49,8 @@ using namespace std;
         else
         {
         sum = sum/2;
-        return solveUsingRec(nums, n-1, sum);
+        vector<vector<int>> dp(n, vector<int>(sum+1, -1));
+        return solveMem(nums, n-1, sum, dp);
         }
     }
-
-int main() {
-  vector<int> nums = {1, 13, 11, 5};
-  cout << canPartition(nums);
-}
+};
