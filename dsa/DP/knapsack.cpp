@@ -79,6 +79,40 @@ int solveUsingTab(vector<int>& weights, vector<int>& value, int n, int capacity)
     }
   return dp[n][capacity];
 }
+
+int solveUsingSO(vector<int>& weights, vector<int>& value, int n, int capacity)
+{
+  vector<int> prev(capacity+1, 0);
+  vector<int> curr(capacity+1, 0);
+
+  for(int w=weights[0]; w<=capacity; w++)
+    {
+      if(weights[0] <= capacity)
+        prev[w] = value[0];
+    }
+
+  for(int index=1; index<=n; index++)
+    {
+      for(int wt = 0; wt<=capacity; wt++)
+        {
+          int include = 0;
+          if(weights[index] <= wt)
+          {
+            include = value[index] + prev[wt-weights[index]];
+            
+          }
+          int exclude = prev[wt];
+
+          curr[wt] = max(include, exclude);
+        }
+      prev = curr;
+    }
+  return curr[capacity];
+
+  
+}
+
+
 int main() {
   vector<int> weights = {4, 5, 1};
   vector<int> value = {1, 2, 3};
@@ -87,5 +121,5 @@ int main() {
 
   // vector<vector<int>> dp(n, vector<int>(cap+1, -1));
   
-  cout << solveUsingTab(weights, value, n-1, cap);
+  cout << solveUsingSO(weights, value, n-1, cap);
 }
