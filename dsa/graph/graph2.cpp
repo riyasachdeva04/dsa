@@ -40,7 +40,7 @@ void printAdjacencyList()
 int main() {
   Graph g;
   g.addEdge(0, 1, 0);
-  g.addEdge(1, 2, 1);
+  g.addEdge(1, 2, 0);
   g.addEdge(2, 0, 0);
 
   g.printAdjacencyList();
