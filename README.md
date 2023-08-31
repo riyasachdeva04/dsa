@@ -15,3 +15,4 @@
 12. [Binary Search Tree](https://github.com/riyasachdeva04/dsa/tree/main/dsa/binary%20search%20tree)
 13. [Maps & Tries](https://github.com/riyasachdeva04/dsa/tree/main/dsa/Maps%20%26%20Tries)
 14. [Dynamic Programming](https://github.com/riyasachdeva04/dsa/tree/main/dsa/DP)
+15. [Graph](https://github.com/riyasachdeva04/dsa/tree/main/dsa/graph)
