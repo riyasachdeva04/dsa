@@ -34,10 +34,10 @@ void printGraph()
     }
 }
 
-void bfs(int src)
+void bfs(int src, unordered_map<int, bool>& visited)
 {
   queue<int> Q;
-  unordered_map<int, bool> visited;
+  
 
   Q.push(src);
   visited[src] = true;
@@ -74,5 +74,12 @@ int main()
   q.addEdge(4, 7, 0);
 
   q.printGraph();
-  q.bfs(0);
+
+  unordered_map<int, bool> visited;
+  for(int i=0; i<=7; i++)
+  {
+    if(!visited[i])
+        q.bfs(i, visited);
+  }
+  
 }
