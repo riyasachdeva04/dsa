@@ -76,7 +76,7 @@ int main()
   q.printGraph();
 
   unordered_map<int, bool> visited;
-  for(int i=0; i<=7; i++)
+  for(int i=0; i<7; i++)
   {
     if(!visited[i])
         q.bfs(i, visited);
