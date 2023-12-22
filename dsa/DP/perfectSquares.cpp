@@ -27,6 +27,32 @@ public:
         return dp[n];
     }
 
+    // bottom down solution
+    // int numSquareHelper(int n, vector<int>& dp)
+    // {
+    //     dp[0]=1;
+
+    //     for(int i=1; i<=n; i++)
+    //     {
+    //         int start=1;
+    //         int end = sqrt(i);
+    //         int ans = INT_MAX;
+
+    //         while(start<=end)
+    //         {
+    //             int perfectSquare = start*start;
+    //             int noOfPerfectSquares = 1 + dp[i-perfectSquare];
+    //             if(noOfPerfectSquares < ans)
+    //             {
+    //                 ans = noOfPerfectSquares;
+    //             }
+    //             start++;
+    //         }
+    //         dp[i] = ans;
+    //     }
+    //     return dp[n];
+    // }
+
     int numSquares(int n) {
         vector<int> dp(n+1, -1);
         return numSquareHelper(n, dp)-1;
