@@ -27,7 +27,7 @@ public:
         return dp[n];
     }
 
-    // bottom down solution
+    // bottom up solution
     // int numSquareHelper(int n, vector<int>& dp)
     // {
     //     dp[0]=1;
